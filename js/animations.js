@@ -14,8 +14,12 @@ $(document).ready(function() {
         var $tweetCharCount = 140 - $('.tweet-compose').val().length;
         console.log($tweetCharCount);
         $('#char-count').text($tweetCharCount);
-        $tweetCharCount < 6 ? $('#char-count').css('color','red') : $('#char-count').css('color','black');
+        $tweetCharCount < 11 ? $('#char-count').css('color','red') : $('#char-count').css('color','black');
 
+    // If the user puts in more than 140 characters, the tweet
+    // button should be disabled (and re-enabled when there are <= 140 chars)
+
+        $tweetCharCount < 0 ? $('.button').attr('disabled','disabled') : $('.button').removeAttr('disabled');
 
     })
 });
