@@ -25,9 +25,12 @@ $(document).ready(function() {
 
     // When user clicks "tweet" button the tweet should move to the "Tweets" column
         $('.button').on('click', function() {
-          console.log("Tweet Button Clicked");
-
-
+          var $tweetText = $('.tweet-compose').val();
+          console.log($tweetText);
+          $('#stream').prepend('<div class="tweet"><div class="content"><img class="avatar" src="img/alagoon.jpg"/><strong class="fullname">My BFF</strong><span class="username">@mybff</span><p class="newTweet-text">Today is an amazing day.</p><div class="tweet-actions"><ul><li><span class="icon action-reply"></span> Reply</li><li><span class="icon action-retweet"></span> Retweet</li><li><span class="icon action-favorite"></span> Favorite</li><li><span class="icon action-more"></span> More</li></ul></div><div class="stats"><div class="retweets">  <p class="num-retweets">30</p><p>RETWEETS</p></div><div class="favorites"><p class="num-favorites">6</p><p>FAVORITES</p>  </div><div class="users-interact"><div><img src="img/alagoon.jpg" /><img src="img/vklimenko.jpg" /></div></div><div class="time">1:04 PM - 19 Sep 13</div></div><div class="reply"><img class="avatar" src="img/alagoon.jpg" /><textarea class="tweet-compose" placeholder="Reply to @mybff"/></textarea></div>');
+          $('.newTweet-text').text($tweetText).removeClass('newTweet-text').addClass('Tweet-text');
+          $('.tweet-compose').css({height:'2.5em'}).val('').attr('placeholder','Compose new Tweet...');
+          $('#char-count').text('140');
         });
 
 });
