@@ -33,4 +33,17 @@ $(document).ready(function() {
           $('#char-count').text('140');
         });
 
+    // Reveal Reply, Retweet, Favorite & More on Hover only
+        $('.icon').css('display','none');
+        $('div .content').mouseenter(function() {
+          console.log(this);
+            $('.icon').css('display','inline-block');
+
+        })
+        .mouseleave(function() {
+          console.log(this);
+            $('.icon').css('display','none');
+        });
+
+
 });
