@@ -34,15 +34,14 @@ $(document).ready(function() {
         });
 
     // Reveal Reply, Retweet, Favorite & More on Hover only
-        $('.icon').css('display','none');
-        $('div .content').mouseenter(function() {
-          console.log(this);
-            $('.icon').css('display','inline-block');
+        $('.icon').hide();
+        $('.content').mouseenter(function() {
+            $(this).find('.icon').show();
+
 
         })
         .mouseleave(function() {
-          console.log(this);
-            $('.icon').css('display','none');
+            $(this).find('.icon').hide();
         });
 
 
