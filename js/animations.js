@@ -31,18 +31,27 @@ $(document).ready(function() {
           $('.newTweet-text').text($tweetText).removeClass('newTweet-text').addClass('Tweet-text');
           $('.tweet-compose').css({height:'2.5em'}).val('').attr('placeholder','Compose new Tweet...');
           $('#char-count').text('140');
+          $('.content').find('.icon').hide();
         });
 
     // Reveal Reply, Retweet, Favorite & More on Hover only
         $('.icon').hide();
         $('.content').mouseenter(function() {
             $(this).find('.icon').show();
-
-
         })
         .mouseleave(function() {
             $(this).find('.icon').hide();
         });
 
+
+    // Time stamp should only show on a click on the tweet
+
+      $('.time').hide();
+      // $('.tweet').on('click',function() {
+      //   $(this).find('.time').show().animate();
+      //   $(this).addClass('activeTweet')
+      //   .css({'transform': 'scale(2,2)','border': '1px solid black','position':'absolute','top':'50%','left':'50%','transform':'translate(-50%,-50%)'});
+      //   console.log("Click on Timestamp");
+      // });
 
 });
