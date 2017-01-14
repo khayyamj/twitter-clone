@@ -47,11 +47,11 @@ $(document).ready(function() {
     // Time stamp should only show on a click on the tweet
 
       $('.time').hide();
-      // $('.tweet').on('click',function() {
-      //   $(this).find('.time').show().animate();
-      //   $(this).addClass('activeTweet')
-      //   .css({'transform': 'scale(2,2)','border': '1px solid black','position':'absolute','top':'50%','left':'50%','transform':'translate(-50%,-50%)'});
-      //   console.log("Click on Timestamp");
-      // });
+      $('.tweet').on('click',function() {
+        $(this).find('.time').show().animate();
+        $(this).toggleClass('tweet-active');
+
+        console.log("Click on Timestamp");
+      });
 
 });
